@@ -13,10 +13,10 @@ export default function Home_page2({ navigation }) {
   const [fadeAnim] = useState(new Animated.Value(0)); //độ mờ bằng 0
 
   useEffect(() => {
-    // Bắt đầu hiệu ứng fade-in sau 1 giây
+    // Bắt đầu hiệu ứng fade-in sau 2 giây
     Animated.timing(fadeAnim, {
-      toValue: 2, // Mục tiêu opacity = 1 (hiện rõ)
-      duration: 2000, // Thời gian fade-in là 1 giây
+      toValue: 2, // Mục tiêu opacity = 2 (hiện rõ)
+      duration: 2000, // Thời gian fade-in là 2 giây
       useNativeDriver: true, // Sử dụng native driver để cải thiện hiệu suất
     }).start();
   }, [fadeAnim]);

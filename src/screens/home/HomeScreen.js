@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { images } from "./../../assets/images/index";
@@ -6,38 +13,40 @@ import { images } from "./../../assets/images/index";
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Thanh trạng thái trong suốt */}
-      <StatusBar
-        translucent
-        backgroundColor="transparent"
-        barStyle="light-content"
-      />
-      <View style={styles.row}>
-        {/* Hiển thị logo */}
-        <Image source={images.logo} style={styles.logo} />
-        <Text style={styles.text}>duolingo</Text>
-      </View>
-      <View style={styles.group_logo_container}>
-        <Image source={images.group_logo} style={styles.group_logo} />
-        <Text style={styles.groupText}>The free, fun, and</Text>
-        <Text style={styles.groupText}>effective way to learn a</Text>
-        <Text style={styles.groupText}>language!</Text>
-      </View>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity
-          style={styles.button1}
-          onPress={()  => navigation.navigate("Home_page1")}
-        >
-          <Text style={styles.buttonText1}>GET STARTED</Text>
-        </TouchableOpacity>
+      <SafeAreaView style={styles.container}>
+        {/* Thanh trạng thái trong suốt */}
+        <StatusBar
+          translucent
+          backgroundColor="transparent"
+          barStyle="light-content"
+        />
+        <View style={styles.row}>
+          {/* Hiển thị logo */}
+          <Image source={images.logo} style={styles.logo} />
+          <Text style={styles.text}>duolingo</Text>
+        </View>
+        <View style={styles.group_logo_container}>
+          <Image source={images.group_logo} style={styles.group_logo} />
+          <Text style={styles.groupText}>The free, fun, and</Text>
+          <Text style={styles.groupText}>effective way to learn a</Text>
+          <Text style={styles.groupText}>language!</Text>
+        </View>
+        <View style={styles.buttonsContainer}>
+          <TouchableOpacity
+            style={styles.button1}
+            onPress={() => navigation.navigate("Home_page1")}
+          >
+            <Text style={styles.buttonText1}>GET STARTED</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.button2}
-          onPress={() => alert("I ALREADY HAVE AN ACCOUNT clicked")}
-        >
-          <Text style={styles.buttonText2}>I ALREADY HAVE AN ACCOUNT</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={styles.button2}
+            onPress={() => alert("I ALREADY HAVE AN ACCOUNT clicked")}
+          >
+            <Text style={styles.buttonText2}>I ALREADY HAVE AN ACCOUNT</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     </View>
   );
 }
@@ -47,6 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+
   text: {
     color: "#58CC02",
     fontSize: 30,
